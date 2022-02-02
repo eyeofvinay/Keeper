@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { MdDeleteForever } from "react-icons/md";
+import { MdOutlinePlaylistAdd } from "react-icons/md";
 
 function CreateArea(props) {
   const [note, setNote] = useState({
@@ -9,7 +11,7 @@ function CreateArea(props) {
   function handleChange(event) {
     const { name, value } = event.target;
 
-    setNote(prevNote => {
+    setNote((prevNote) => {
       return {
         ...prevNote,
         [name]: value
@@ -23,6 +25,11 @@ function CreateArea(props) {
       title: "",
       content: ""
     });
+    event.preventDefault();
+  }
+
+  function deleteAll(event) {
+    props.deleteAll();
     event.preventDefault();
   }
 
@@ -42,7 +49,12 @@ function CreateArea(props) {
           placeholder="Take a note..."
           rows="3"
         />
-        <button onClick={submitNote}>Add</button>
+        <button onClick={submitNote}>
+          <MdOutlinePlaylistAdd size={23} />
+        </button>
+        <button onClick={deleteAll} className="delete-all">
+          <MdDeleteForever size={23} />
+        </button>
       </form>
     </div>
   );

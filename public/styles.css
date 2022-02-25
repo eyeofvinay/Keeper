@@ -4,6 +4,7 @@
   --font-color: #424242;
   --bg-color: #fff;
   --heading-color: #06080f;
+  --box-sh: #000;
 }
 
 [data-theme="dark"] {
@@ -12,6 +13,7 @@
   --font-color: #e1e1ff;
   --bg-color: #161625;
   --heading-color: #eee;
+  --box-sh: #000;
 }
 
 * {
@@ -31,7 +33,7 @@ header {
   background-color: var(--primary-color);
   margin: auto -16px;
   padding: 16px 32px;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 10px 0 var(--box-sh);
 }
 
 header h1 {
@@ -92,7 +94,7 @@ form {
   background: #fff;
   padding: 15px;
   border-radius: 7px;
-  box-shadow: 0 1px 5px rgb(138, 137, 137);
+  box-shadow: 0 1px 5px var(--box-sh);
 }
 form input,
 form textarea {
@@ -114,7 +116,7 @@ form button {
   border-radius: 50%;
   width: 36px;
   height: 36px;
-  box-shadow: 0 1px 3px var(--font-color);
+  box-shadow: 0 1px 3px var(--box-sh);
   cursor: pointer;
   outline: none;
 }

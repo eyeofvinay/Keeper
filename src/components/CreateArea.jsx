@@ -49,10 +49,14 @@ function CreateArea(props) {
           placeholder="Take a note..."
           rows="3"
         />
-        <button onClick={submitNote}>
+        <button title="Add this note" onClick={submitNote}>
           <MdOutlinePlaylistAdd size={23} />
         </button>
-        <button onClick={deleteAll} className="delete-all">
+        <button
+          title="Clear all the notes"
+          onClick={deleteAll}
+          className="delete-all"
+        >
           <MdDeleteForever size={23} />
         </button>
       </form>

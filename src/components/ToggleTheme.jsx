@@ -10,7 +10,9 @@ function ToggleTheme(props) {
   }
   return (
     <div className="themer">
-      <button onClick={toggle}>{eyes}</button>
+      <button title="Toggle theme" onClick={toggle}>
+        {eyes}
+      </button>
     </div>
   );
 }

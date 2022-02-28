@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 
 var eyes = "🌞";
 
 function ToggleTheme(props) {
+  const [count, setCount] = useState(0);
+
   function toggle() {
-    if (eyes === "🌞") eyes = "🌙";
-    else eyes = "🌞";
-    props.onClick();
+    setCount((count + 1) % 2);
+    if (count === 0) {
+      document.documentElement.setAttribute("data-theme", "dark");
+      eyes = "🌙";
+    } else {
+      document.documentElement.setAttribute("data-theme", "light");
+      eyes = "🌞";
+    }
   }
   return (
     <div className="themer">

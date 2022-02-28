@@ -28,19 +28,11 @@ function App() {
     });
   }
 
-  const [count, setCount] = useState(0);
-  function toggleTheme() {
-    if (count === 0) {
-      document.documentElement.setAttribute("data-theme", "dark");
-    } else {
-      document.documentElement.setAttribute("data-theme", "light");
-    }
-    setCount((count + 1) % 2);
-  }
+  
 
   return (
     <div>
-      <ToggleTheme onClick={toggleTheme} />
+      <ToggleTheme />
       <Header />
       <CreateArea onAdd={addNote} deleteAll={deleteAll} />
       {notes.map((noteItem, index) => {
